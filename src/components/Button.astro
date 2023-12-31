@@ -1,0 +1,26 @@
+---
+interface Props {
+  text: string;
+  fn: Function;
+}
+
+const { text, fn } = Astro.props;
+---
+
+<button id='' class='btn'>
+  {text}
+</button>
+
+<style>
+  .btn {
+    display: block;
+    width: 500px;
+    height: 50px;
+    border: none;
+    background-color: hsl(0, 0%, 0%);
+    color: white;
+
+    font-size: 1em;
+    font-weight: 600;
+  }
+</style>

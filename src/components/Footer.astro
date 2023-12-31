@@ -1,0 +1,43 @@
+---
+interface Props {
+  currentYear: string;
+}
+
+const { currentYear } = Astro.props;
+---
+
+<div class='footer'>
+  <div class='row'>
+    <h3>Rial-code</h3>
+    <h1>Ricardo Alvarez-Correa's website</h1>
+    <p>&copy; {currentYear} All rights reserved.</p>
+  </div>
+</div>
+
+<style>
+  .footer {
+    min-height: 10vh;
+    background-color: hsl(0, 0%, 10%);
+
+    .row {
+      color: white;
+      text-align: center;
+
+      h1 {
+        font-size: 0.9em;
+        margin-bottom: 10px;
+        color: hsl(0, 0%, 45%);
+      }
+
+      h3 {
+        font-size: 1.3em;
+        padding-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        padding-bottom: 20px;
+      }
+    }
+  }
+</style>
