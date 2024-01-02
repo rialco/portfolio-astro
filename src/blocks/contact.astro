@@ -1,0 +1,100 @@
+---
+import Button from '../components/Button.astro';
+---
+
+<div class='contact' id='contact'>
+  <div class='contactContainer'>
+    <h2>Drop me a message</h2>
+    <form>
+      <input type='text' class='textInput' name='name' placeholder='Name' />
+      <input type='email' class='textInput' name='email' placeholder='Email' />
+      <input type='text' class='textInput' name='subject' placeholder='Subject' />
+      <textarea class='textArea' name='message' placeholder='Message'></textarea>
+      <Button text='Send message' type='submit' />
+    </form>
+  </div>
+</div>
+
+<style>
+  .contact {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    .contactContainer {
+      width: 1200px;
+
+      .textInput {
+        display: block;
+        width: 500px;
+        height: 50px;
+        margin-bottom: 10px;
+        padding-left: 20px;
+        border-radius: 4px;
+
+        background-color: hsl(0, 0%, 95%);
+        border: none;
+
+        font-size: 0.95em;
+      }
+
+      .textArea {
+        display: block;
+        width: 500px;
+        height: 150px;
+        margin-bottom: 10px;
+        padding-left: 20px;
+        padding-top: 10px;
+        border-radius: 4px;
+
+        background-color: hsl(0, 0%, 95%);
+        border: none;
+
+        font-size: 0.95em;
+      }
+
+      .selectInput {
+        display: block;
+        width: $inputWidth;
+        height: 50px;
+        margin-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        background-color: hsl(0, 0%, 95%);
+        border: none;
+        appearance: none;
+
+        font-size: 0.95em;
+
+        color: hsl(0, 0%, 60%);
+      }
+
+      h2 {
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      form {
+        position: relative;
+        width: fit-content;
+        margin: auto;
+        margin-top: 40px;
+        margin-bottom: 100px;
+
+        .btn {
+          display: block;
+          width: 100%;
+          height: 50px;
+          border: none;
+          background-color: hsl(0, 0%, 0%);
+          color: white;
+
+          font-size: 1em;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+</style>

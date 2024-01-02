@@ -1,0 +1,74 @@
+---
+import CardsContainer from '../components/CardsContainer.astro';
+
+const cards = [
+  {
+    project: 'Li.Fi',
+    imagePath: '/images/lifi_jumper.jpg',
+    technologies: ['NodeJs', 'Typescript', 'MongoDB', 'Express', 'Fastify', 'Redis'],
+  },
+  {
+    project: 'Modo',
+    imagePath: '/images/modo.jpg',
+    technologies: ['NodeJS', 'NestJs', 'Express', 'DynamoDB', 'PostgreSQL', 'JWT', 'Docker', 'Kubernetes'],
+  },
+  {
+    project: 'Globant',
+    imagePath: '/images/globant.jpg',
+    technologies: [
+      'NodeJs',
+      'Javascript',
+      'Typescript',
+      'Express',
+      'Microsoft SQL Server',
+      'Jenkins',
+      'Docker',
+      'Kubernetes',
+    ],
+  },
+  {
+    project: 'Blockchain RPC Aggregator',
+    imagePath: '/images/rpc_aggregator.jpg',
+    technologies: ['NodeJs', 'Javascript'],
+  },
+  {
+    project: 'Blockchain events analytics',
+    imagePath: '/images/blockchain_analytics.jpg',
+    technologies: ['NodeJS', 'Grafana', 'Javascript'],
+  },
+  {
+    project: 'ARI CANADA VISIONNEMENT INC.',
+    imagePath: '/images/ari_canada.jpg',
+    technologies: ['Wordpress', 'Woocommerce', 'Javascript', 'PHP'],
+  },
+];
+---
+
+<div class='portfolio' id='portfolio'>
+  <div class='portfolioContainer'>
+    <h2>Portfolio</h2>
+    <CardsContainer cards={cards} />
+  </div>
+</div>
+
+<style>
+  .portfolio {
+    width: 100%;
+
+    min-height: calc(60vh - 110px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    background-color: hsla(0, 0%, 0%, 0.05);
+
+    .portfolioContainer {
+      width: 1200px;
+
+      h2 {
+        text-align: center;
+        margin-top: 60px;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,202 @@
+---
+import { Icon } from 'astro-icon/components';
+import Link from '../components/Link.astro';
+---
+
+<div class='about' id='about'>
+  <div class='aboutContainer'>
+    <div class='imageContainer'>
+      <div class='imageHolder'>
+        <img src='/images/profile.jpeg' alt='Profile image' />
+      </div>
+    </div>
+    <div class='textContent'>
+      <div>
+        <h2>Hello there!</h2>
+        <p>
+          My name is <b>Ricardo Alvarez-Correa Mercado</b>.
+          <br />I am a <strong>Fullstack developer</strong> with over <strong>5 years of experience</strong>
+        </p>
+        <p class='tech-stack-heading'>My main tech stack is:</p>
+
+        <ul class='techStack'>
+          <li>
+            <Icon name='devicon:nodejs' />
+            <span>NodeJs</span>
+          </li>
+          <li>
+            <Icon name='devicon:mongodb' />
+            <span>MongoDB</span>
+          </li>
+          <li>
+            <Icon name='devicon:postgresql' />
+            <span>PostgreSQL</span>
+          </li>
+          <li>
+            <Icon name='devicon:nextjs' />
+            <span>NextJs</span>
+          </li>
+          <li>
+            <Icon name='devicon:express' />
+            <span>Express</span>
+          </li>
+        </ul>
+
+        <p class='tech-stack-heading'>Abilities with:</p>
+
+        <ul class='techStack'>
+          <li>
+            <Icon name='devicon:redis' />
+            <span>Redis</span>
+          </li>
+          <li>
+            <Icon name='devicon:rust' />
+            <span>Rust</span>
+          </li>
+          <li>
+            <Icon name='devicon:astro' />
+            <span>Astro</span>
+          </li>
+          <li>
+            <Icon name='devicon:nestjs' />
+            <span>NestJs</span>
+          </li>
+          <li>
+            <Icon name='devicon:python' />
+            <span>Python</span>
+          </li>
+        </ul>
+
+        <Link
+          text='Connect with me on LinkedIn'
+          className='linkedinBtn'
+          icon='linkedin'
+          href='https://www.linkedin.com/in/ralvarezcorrea/'
+          target='_blank'
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .about {
+    width: 100%;
+    min-height: calc(70vh - 110px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 1px solid hsla(0, 0%, 90%, 0.3);
+
+    .aboutContainer {
+      display: flex;
+      flex-direction: row;
+      width: 1200px;
+      .imageContainer {
+        width: 50%;
+        .imageHolder {
+          position: relative;
+          height: 400px;
+          width: 400px;
+          border-radius: 100%;
+          border: 2px solid hsla(0, 0%, 0%, 0.2);
+          box-shadow: 0px 6px 10px 4px hsla(0, 0%, 0%, 0.09);
+          margin: auto;
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            box-sizing: border-box;
+            padding: 0;
+            border: none;
+            margin: auto;
+            display: block;
+            width: 0;
+            height: 0;
+            min-width: 100%;
+            max-width: 100%;
+            min-height: 100%;
+            max-height: 100%;
+            border-radius: 100%;
+            overflow: clip;
+          }
+        }
+      }
+      .textContent {
+        width: 50%;
+        display: flex;
+        align-items: center;
+
+        h2 {
+          margin-bottom: 20px;
+        }
+
+        p {
+          margin-bottom: 20px;
+        }
+
+        .tech-stack-heading {
+          margin-bottom: 10px;
+        }
+
+        .techStack {
+          display: flex;
+          list-style: none;
+          margin-bottom: 20px;
+          li {
+            display: inline-block;
+            display: flex;
+            width: fit-content;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+            font-size: 2em;
+            span {
+              margin-left: 4px;
+              font-size: 1rem;
+            }
+          }
+
+          .mongo {
+            color: #4db33d;
+          }
+          .postgres {
+            color: #0064a5;
+          }
+          .react {
+            color: #0064a5;
+          }
+          .express {
+          }
+          .node {
+            color: #68a063;
+          }
+        }
+
+        .linkedinBtn {
+          background-color: #2867b2;
+          color: white;
+          border: none;
+          height: 40px;
+          padding: 0px 40px;
+
+          font-size: 1em;
+
+          display: flex;
+          align-items: center;
+          font-weight: 600;
+          width: fit-content;
+
+          text-decoration: none;
+
+          .icon {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+</style>

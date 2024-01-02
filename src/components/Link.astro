@@ -2,19 +2,19 @@
 import { Icon } from 'astro-icon/components';
 interface Props {
   text: string;
-  type?: 'submit' | 'button' | 'reset' | null;
+  href: string;
+  target: '_blank' | '_parent' | '_self' | '_top';
   className?: string;
-  fn?: Function;
   icon?: string;
 }
 
-const { text, type, className, fn, icon } = Astro.props;
+const { text, className, href, target, icon } = Astro.props;
 ---
 
-<button type={type} class={'btn ' + className}>
+<a class={'btn ' + className} href={href} target={target}>
   {icon ? <Icon name={icon} class='mr-10' /> : null}
   {text}
-</button>
+</a>
 
 <style>
   .btn {
