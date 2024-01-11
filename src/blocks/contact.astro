@@ -23,12 +23,12 @@ import Button from '../components/Button.astro';
     justify-content: center;
 
     .contactContainer {
-      width: 1200px;
-
+      width: 100%;
       .textInput {
         display: block;
-        width: 500px;
+        width: 90%;
         height: 50px;
+        margin: auto;
         margin-bottom: 10px;
         padding-left: 20px;
         border-radius: 4px;
@@ -41,8 +41,9 @@ import Button from '../components/Button.astro';
 
       .textArea {
         display: block;
-        width: 500px;
+        width: 90%;
         height: 150px;
+        margin: auto;
         margin-bottom: 10px;
         padding-left: 20px;
         padding-top: 10px;
@@ -56,7 +57,7 @@ import Button from '../components/Button.astro';
 
       .selectInput {
         display: block;
-        width: $inputWidth;
+        width:;
         height: 50px;
         margin-bottom: 10px;
         padding-left: 20px;
@@ -78,15 +79,19 @@ import Button from '../components/Button.astro';
 
       form {
         position: relative;
-        width: fit-content;
+        width: 100%;
+        max-width: 500px;
+        display: block;
         margin: auto;
         margin-top: 40px;
         margin-bottom: 100px;
 
         .btn {
           display: block;
-          width: 100%;
+          width: 90%;
+          max-width: 500px;
           height: 50px;
+          margin: auto;
           border: none;
           background-color: hsl(0, 0%, 0%);
           color: white;

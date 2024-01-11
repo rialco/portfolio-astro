@@ -12,7 +12,7 @@ import Link from '../components/Link.astro';
     </div>
     <div class='textContent'>
       <div>
-        <h2>Hello there!</h2>
+        <h2>Hello world!</h2>
         <p>
           My name is <b>Ricardo Alvarez-Correa Mercado</b>.
           <br />I am a <strong>Fullstack developer</strong> with over <strong>5 years of experience</strong>
@@ -42,16 +42,16 @@ import Link from '../components/Link.astro';
           </li>
         </ul>
 
-        <p class='tech-stack-heading'>Abilities with:</p>
+        <p class='tech-stack-heading'>Also worked with:</p>
 
         <ul class='techStack'>
           <li>
-            <Icon name='devicon:redis' />
-            <span>Redis</span>
-          </li>
-          <li>
             <Icon name='devicon:rust' />
             <span>Rust</span>
+          </li>
+          <li>
+            <Icon name='devicon:redis' />
+            <span>Redis</span>
           </li>
           <li>
             <Icon name='devicon:astro' />
@@ -64,6 +64,10 @@ import Link from '../components/Link.astro';
           <li>
             <Icon name='devicon:python' />
             <span>Python</span>
+          </li>
+          <li>
+            <Icon name='devicon:dynamodb' />
+            <span>DynamoDB</span>
           </li>
         </ul>
 
@@ -81,8 +85,10 @@ import Link from '../components/Link.astro';
 
 <style>
   .about {
+    position: relative;
     width: 100%;
-    min-height: calc(70vh - 110px);
+    height: 100vh;
+    max-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,19 +96,27 @@ import Link from '../components/Link.astro';
     border-bottom: 1px solid hsla(0, 0%, 90%, 0.3);
 
     .aboutContainer {
+      position: relative;
+      container-name: about-container;
       display: flex;
       flex-direction: row;
       width: 1200px;
       .imageContainer {
+        position: relative;
         width: 50%;
         .imageHolder {
+          transition: 0.5s ease-in-out;
+          display: block;
           position: relative;
-          height: 400px;
-          width: 400px;
+          max-height: 370px;
+          max-width: 370px;
+          height: 90vw;
+          width: 90vw;
           border-radius: 100%;
           border: 2px solid hsla(0, 0%, 0%, 0.2);
           box-shadow: 0px 6px 10px 4px hsla(0, 0%, 0%, 0.09);
           margin: auto;
+
           img {
             position: absolute;
             top: 0;
@@ -124,79 +138,107 @@ import Link from '../components/Link.astro';
             overflow: clip;
           }
         }
+        @media (max-width: 767px) {
+          width: 100%;
+        }
       }
       .textContent {
         width: 50%;
         display: flex;
         align-items: center;
 
-        h2 {
-          margin-bottom: 20px;
-        }
+        div {
+          width: 100%;
+          h2 {
+            margin-bottom: 20px;
+          }
 
-        p {
-          margin-bottom: 20px;
-        }
+          p {
+            margin-bottom: 20px;
+          }
 
-        .tech-stack-heading {
-          margin-bottom: 10px;
-        }
+          .tech-stack-heading {
+            margin-bottom: 10px;
+          }
 
-        .techStack {
-          display: flex;
-          list-style: none;
-          margin-bottom: 20px;
-          li {
-            display: inline-block;
+          .techStack {
             display: flex;
-            width: fit-content;
-            justify-content: center;
-            align-items: center;
-            margin-right: 20px;
-            font-size: 2em;
-            span {
-              margin-left: 4px;
-              font-size: 1rem;
+            flex-wrap: wrap;
+            padding-right: 40px;
+            margin-bottom: 20px;
+            overflow: hidden;
+
+            li {
+              display: inline-block;
+              display: flex;
+              width: fit-content;
+              justify-content: center;
+              align-items: center;
+              margin-right: 20px;
+              margin-bottom: 14px;
+              font-size: 2em;
+              span {
+                margin-left: 4px;
+                font-size: 1rem;
+              }
+            }
+
+            .mongo {
+              color: #4db33d;
+            }
+            .postgres {
+              color: #0064a5;
+            }
+            .react {
+              color: #0064a5;
+            }
+            .express {
+            }
+            .node {
+              color: #68a063;
             }
           }
 
-          .mongo {
-            color: #4db33d;
-          }
-          .postgres {
-            color: #0064a5;
-          }
-          .react {
-            color: #0064a5;
-          }
-          .express {
-          }
-          .node {
-            color: #68a063;
+          .linkedinBtn {
+            background-color: #2867b2;
+            color: white;
+            border: none;
+            height: 40px;
+            padding: 0px 40px;
+
+            font-size: 1em;
+
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            width: fit-content;
+
+            text-decoration: none;
+
+            .icon {
+              margin-right: 10px;
+            }
           }
         }
 
-        .linkedinBtn {
-          background-color: #2867b2;
-          color: white;
-          border: none;
-          height: 40px;
-          padding: 0px 40px;
+        @media (max-width: 767px) {
+          padding: 20px;
+          width: 100%;
 
-          font-size: 1em;
-
-          display: flex;
-          align-items: center;
-          font-weight: 600;
-          width: fit-content;
-
-          text-decoration: none;
-
-          .icon {
-            margin-right: 10px;
+          .linkedinBtn {
+            width: 100%;
           }
         }
       }
+
+      @media (max-width: 767px) {
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 767px) {
+      padding-top: 20px;
+      height: 100%;
+      max-height: none;
     }
   }
 </style>

@@ -1,24 +1,26 @@
 ---
 import { Icon } from 'astro-icon/components';
 ---
+
 <header>
   <div class='upperHeader'>
     <h5 class='github'>
-        <Icon name='devicon:github' />
-        <a target="_blank" href="https://github.com/rialco">Github profile</a>
+      <Icon name='devicon:github' />
+      <a target='_blank' href='https://github.com/rialco'>Github profile</a>
     </h5>
   </div>
   <div class='navbar'>
     <div class='navbarContainer'>
       <div class='navbarLeft'>
-          <a href="/">Rial-code</a>
+        <a href='/'>rial-code</a>
       </div>
       <div class='navbarRight'>
         <nav>
-          <a href="/#about">About me</a>
-          <a href="/#portfolio">Portfolio</a>
-          <a href="/#contact">Contact me</a>
-          <a href="/blog">Blog</a>
+          <a href='/#about'>About me</a>
+          <a href='/#portfolio'>Portfolio</a>
+          <a href='/#experience'>Experience</a>
+          <a href='/#contact'>Contact me</a>
+          <a href='/blog'>Blog</a>
         </nav>
       </div>
     </div>
@@ -27,83 +29,90 @@ import { Icon } from 'astro-icon/components';
 
 <style>
   .upperHeader {
-  background-color: hsl(0, 0%, 10%);
-  height: 40px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .github {
-    width: 1200px;
-    color: white;
-    text-align: right;
-    font-size: 0.9em;
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    .icon {
-      margin-right: 6px;
-      font-size: 1.2em;
-    }
-
-    a {
-      color: white;
-      text-decoration: none;
-    }
-  }
-}
-
-.navbar {
-  height: 70px;
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-bottom: 1px solid hsla(0, 0%, 90%, 0.5);
-  padding: 10px;
-
-  .navbarContainer {
-    width: 1200px;
-    height: 100%;
+    background-color: hsl(0, 0%, 10%);
+    height: 40px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    .navbarLeft {
-      width: 50%;
+    .github {
+      width: 1200px;
+      color: white;
+      text-align: right;
+      font-size: 0.9em;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      .icon {
+        margin-right: 6px;
+        font-size: 1.2em;
+      }
 
       a {
-        font-family: 'Inconsolata', monospace;
-        font-weight: 700;
-
-        margin-bottom: 0;
+        color: white;
         text-decoration: none;
-        font-size: 1.4em;
-        color: hsl(0, 0%, 0%);
       }
     }
-    .navbarRight {
-      width: 50%;
+  }
 
-      nav {
-        width: fit-content;
-        float: right;
+  .navbar {
+    height: 70px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 1px solid hsla(0, 0%, 90%, 0.5);
+    padding: 10px;
+
+    .navbarContainer {
+      width: 1200px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .navbarLeft {
+        width: 50%;
+
         a {
-          // font-family: 'Inconsolata', monospace;
-          font-weight: 600;
-          font-size: 0.92em;
+          font-family: 'Inconsolata', monospace;
+          font-weight: 700;
 
-          margin-left: 20px;
+          margin-bottom: 0;
           text-decoration: none;
-          color: hsl(0, 0%, 10%);
+          font-size: 1.4em;
+          color: hsl(0, 0%, 0%);
+        }
+      }
+      .navbarRight {
+        width: 50%;
+
+        nav {
+          width: 100%;
+          display: flex;
+          justify-content: end;
+          a {
+            font-family: 'Inconsolata', monospace;
+            font-weight: 600;
+            font-size: 0.92em;
+
+            margin-left: 20px;
+            text-decoration: none;
+            color: hsl(0, 0%, 10%);
+          }
+        }
+
+        @media (max-width: 720px) {
+          nav {
+            display: none;
+          }
         }
       }
     }
   }
-}
 </style>
