@@ -5,31 +5,45 @@ const cards = [
   {
     project: 'Blockchain RPC Aggregator',
     imagePath: '/images/rpc_aggregator.jpg',
-    technologies: ['NodeJs', 'Javascript'],
-    keypoints: [],
+    technologies: ['NodeJs', 'Typescript', 'Ethersjs'],
+    keypoints: [
+      'Base project for aggregating RPC providers on the blockchain',
+      'Clean architecture principles',
+      'This repository contains the source code that provides the ability to make RPC calls and fallback to other RPC providers in case of failure',
+    ],
   },
   {
     project: 'Blockchain events analytics',
     imagePath: '/images/blockchain_analytics.jpg',
-    technologies: ['NodeJS', 'Grafana', 'Javascript'],
-    keypoints: [],
+    technologies: ['NodeJS', 'Grafana', 'Typescript', 'Postgress'],
+    keypoints: [
+      'Base project for querying blockchain events',
+      'Clean architecture principles',
+      'This repository contains the source code for querying blockchain events and later queue them in order to store them in a postgress database',
+      'This was used in conjunction with a docker network to connect to a grafana dashboard',
+    ],
   },
   {
     project: 'ARI CANADA VISIONNEMENT INC.',
     imagePath: '/images/ari_canada.jpg',
     technologies: ['Wordpress', 'Woocommerce', 'Javascript', 'PHP'],
-    keypoints: [],
+    keypoints: [
+      'Wordpress site for ARI Canada Visionnement',
+      'Website to provide guidance and information on the migratory process to Canada',
+      'Included woocommerce to enable payments for previously mentioned service',
+      'Designed concept and develop custom user functionality',
+    ],
   },
 ];
 ---
 
-<div class='portfolio' id='portfolio'>
+<section class='portfolio' id='portfolio'>
   <div class='portfolio-container'>
     <h2 class='component-heading'>&lt; Portfolio /&gt;</h2>
     <h4>Projects</h4>
     <CardsContainer cards={cards} />
   </div>
-</div>
+</section>
 
 <style>
   .portfolio {
