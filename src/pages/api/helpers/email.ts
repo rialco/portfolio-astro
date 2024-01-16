@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import validator from "validator";
+import { msToMinutes } from "./utils";
 
 const knownIps: { [key: string]: number } = {};
 
@@ -11,10 +12,14 @@ export const sendEmail = async (
   clientIp: string,
 ) => {
   const currentMillis = Date.now();
-  const tenMinutesMs = 60000 * 10;
+  const coolDownMs = 60000 * 3;
 
-  if (knownIps[clientIp] && currentMillis < knownIps[clientIp] + tenMinutesMs)
-    throw new Error("Too soon to send another message");
+  if (knownIps[clientIp] && currentMillis < knownIps[clientIp] + coolDownMs)
+    throw new Error(
+      `Too soon to send another message. Try again in: ${msToMinutes(
+        knownIps[clientIp] + coolDownMs - currentMillis,
+      )} minutes`,
+    );
 
   const PRIVATE_KEY = import.meta.env.RESEND_API_KEY;
   const resend = new Resend(PRIVATE_KEY);

@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",
+    "@astrojs/solid-js": "^4.0.1",
     "@astrojs/vercel": "^6.1.4",
     "astro": "^4.0.8",
     "astro-icon": "^1.0.1",
     "resend": "^2.1.0",
+    "solid-js": "^1.8.11",
     "typescript": "^5.3.3",
     "validator": "^13.11.0"
   },

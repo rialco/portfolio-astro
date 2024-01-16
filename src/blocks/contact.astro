@@ -1,53 +1,15 @@
 ---
-import { Icon } from 'astro-icon/components';
 import Button from '../components/Button.astro';
-import { sendEmail } from '../functions/email';
-
-const alerts: string[] = [];
-
-if (Astro.request.method === 'POST') {
-  try {
-    const ip = Astro.clientAddress;
-    const data = await Astro.request.formData();
-    const name = data.get('name')?.toString();
-    const email = data.get('email')?.toString();
-    const subject = data.get('subject')?.toString();
-    const message = data.get('message')?.toString();
-
-    if (!name || !email || !subject || !message) throw new Error('Fields are missing');
-
-    const result = await sendEmail(name, email, subject, message, ip);
-
-    if (result) {
-      alerts.push('Email sended successfully');
-    }
-  } catch (error: any) {
-    alerts.push(error.message);
-  }
-}
+import { Form } from '../components/solid/contactForm';
 ---
 
 <section class='contact' id='contact'>
   <div class='contact-container'>
-    <h2>Drop me a message</h2>
-
-    <form method='post'>
-      <div class='form-alert-container'>
-        {
-          alerts.map((alert) => (
-            <div class='alert'>
-              <Icon name='alert' />
-              <span>{alert}</span>
-            </div>
-          ))
-        }
-      </div>
-      <input type='text' class='text-input' name='name' placeholder='Name' />
-      <input type='email' class='text-input' name='email' placeholder='Email' />
-      <input type='text' class='text-input' name='subject' placeholder='Subject' />
-      <textarea class='text-area' name='message' placeholder='Message'></textarea>
+    <h2 class='component-heading'>&lt; Contact /&gt;</h2>
+    <h4>Drop me a message!</h4>
+    <Form client:only='solid'>
       <Button text='Send message' type='submit' />
-    </form>
+    </Form>
   </div>
 </section>
 
@@ -95,6 +57,10 @@ if (Astro.request.method === 'POST') {
         margin-top: 60px;
       }
 
+      h4 {
+        text-align: center;
+      }
+
       form {
         position: relative;
         width: 100%;
@@ -105,12 +71,11 @@ if (Astro.request.method === 'POST') {
         margin-bottom: 100px;
 
         .form-alert-container {
-          background-color: hsl(81, 20%, 80%);
-          padding: 20px;
-          border-radius: 6px;
-          margin-bottom: 20px;
-
           .alert {
+            background-color: hsl(81, 20%, 80%);
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
             display: flex;
             flex-wrap: nowrap;
             justify-content: center;
