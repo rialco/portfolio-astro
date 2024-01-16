@@ -1,11 +1,47 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Button from '../components/Button.astro';
+import { sendEmail } from '../functions/email';
+
+const alerts: string[] = [];
+
+if (Astro.request.method === 'POST') {
+  try {
+    const ip = Astro.clientAddress;
+    const data = await Astro.request.formData();
+    const name = data.get('name')?.toString();
+    const email = data.get('email')?.toString();
+    const subject = data.get('subject')?.toString();
+    const message = data.get('message')?.toString();
+
+    if (!name || !email || !subject || !message) throw new Error('Fields are missing');
+
+    const result = await sendEmail(name, email, subject, message, ip);
+
+    if (result) {
+      alerts.push('Email sended successfully');
+    }
+  } catch (error: any) {
+    alerts.push(error.message);
+  }
+}
 ---
 
 <section class='contact' id='contact'>
   <div class='contact-container'>
     <h2>Drop me a message</h2>
-    <form>
+
+    <form method='post'>
+      <div class='form-alert-container'>
+        {
+          alerts.map((alert) => (
+            <div class='alert'>
+              <Icon name='alert' />
+              <span>{alert}</span>
+            </div>
+          ))
+        }
+      </div>
       <input type='text' class='text-input' name='name' placeholder='Name' />
       <input type='email' class='text-input' name='email' placeholder='Email' />
       <input type='text' class='text-input' name='subject' placeholder='Subject' />
@@ -67,6 +103,25 @@ import Button from '../components/Button.astro';
         margin: auto;
         margin-top: 40px;
         margin-bottom: 100px;
+
+        .form-alert-container {
+          background-color: hsl(81, 20%, 80%);
+          padding: 20px;
+          border-radius: 6px;
+          margin-bottom: 20px;
+
+          .alert {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+          }
+
+          svg {
+            font-size: 1.8rem;
+            margin-right: 10px;
+          }
+        }
 
         .btn {
           display: block;
