@@ -4,22 +4,23 @@ import Link from '../components/Link.astro';
 ---
 
 <div class='about' id='about'>
-  <div class='aboutContainer'>
-    <div class='imageContainer'>
-      <div class='imageHolder'>
+  <div class='about-container'>
+    <div class='image-container'>
+      <div class='image-holder'>
         <img src='/images/profile.jpeg' alt='Profile image' />
       </div>
     </div>
-    <div class='textContent'>
+    <div class='text-content'>
       <div>
-        <h2>Hello world!</h2>
+        <h2 class='component-heading'>&lt; About me /&gt;</h2>
+        <h4>Hello world!</h4>
         <p>
           My name is <b>Ricardo Alvarez-Correa Mercado</b>.
           <br />I am a <strong>Fullstack developer</strong> with over <strong>5 years of experience</strong>
         </p>
         <p class='tech-stack-heading'>My main tech stack is:</p>
 
-        <ul class='techStack'>
+        <ul class='tech-stack'>
           <li>
             <Icon name='devicon:nodejs' />
             <span>NodeJs</span>
@@ -44,7 +45,7 @@ import Link from '../components/Link.astro';
 
         <p class='tech-stack-heading'>Also worked with:</p>
 
-        <ul class='techStack'>
+        <ul class='tech-stack'>
           <li>
             <Icon name='devicon:rust' />
             <span>Rust</span>
@@ -73,7 +74,7 @@ import Link from '../components/Link.astro';
 
         <Link
           text='Connect with me on LinkedIn'
-          className='linkedinBtn'
+          className='linkedin-btn'
           icon='linkedin'
           href='https://www.linkedin.com/in/ralvarezcorrea/'
           target='_blank'
@@ -95,16 +96,16 @@ import Link from '../components/Link.astro';
 
     border-bottom: 1px solid hsla(0, 0%, 90%, 0.3);
 
-    .aboutContainer {
+    .about-container {
       position: relative;
       container-name: about-container;
       display: flex;
       flex-direction: row;
       width: 1200px;
-      .imageContainer {
+      .image-container {
         position: relative;
         width: 50%;
-        .imageHolder {
+        .image-holder {
           transition: 0.5s ease-in-out;
           display: block;
           position: relative;
@@ -113,7 +114,7 @@ import Link from '../components/Link.astro';
           height: 90vw;
           width: 90vw;
           border-radius: 100%;
-          border: 2px solid hsla(0, 0%, 0%, 0.2);
+          border: 2px solid hsla(83, 20%, 76%);
           box-shadow: 0px 6px 10px 4px hsla(0, 0%, 0%, 0.09);
           margin: auto;
 
@@ -142,14 +143,14 @@ import Link from '../components/Link.astro';
           width: 100%;
         }
       }
-      .textContent {
+      .text-content {
         width: 50%;
         display: flex;
         align-items: center;
 
         div {
           width: 100%;
-          h2 {
+          h4 {
             margin-bottom: 20px;
           }
 
@@ -161,7 +162,7 @@ import Link from '../components/Link.astro';
             margin-bottom: 10px;
           }
 
-          .techStack {
+          .tech-stack {
             display: flex;
             flex-wrap: wrap;
             padding-right: 40px;
@@ -182,25 +183,10 @@ import Link from '../components/Link.astro';
                 font-size: 1rem;
               }
             }
-
-            .mongo {
-              color: #4db33d;
-            }
-            .postgres {
-              color: #0064a5;
-            }
-            .react {
-              color: #0064a5;
-            }
-            .express {
-            }
-            .node {
-              color: #68a063;
-            }
           }
 
-          .linkedinBtn {
-            background-color: #2867b2;
+          .linkedin-btn {
+            background-color: hsl(131, 22%, 29%);
             color: white;
             border: none;
             height: 40px;

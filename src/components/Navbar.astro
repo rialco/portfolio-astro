@@ -3,22 +3,22 @@ import { Icon } from 'astro-icon/components';
 ---
 
 <header>
-  <div class='upperHeader'>
+  <div class='upper-header'>
     <h5 class='github'>
-      <Icon name='devicon:github' />
+      <Icon name='github' />
       <a target='_blank' href='https://github.com/rialco'>Github profile</a>
     </h5>
   </div>
   <div class='navbar'>
-    <div class='navbarContainer'>
-      <div class='navbarLeft'>
+    <div class='navbar-container'>
+      <div class='navbar-left'>
         <a href='/'>rial-code</a>
       </div>
-      <div class='navbarRight'>
+      <div class='navbar-right'>
         <nav>
           <a href='/#about'>About me</a>
-          <a href='/#portfolio'>Portfolio</a>
           <a href='/#experience'>Experience</a>
+          <a href='/#portfolio'>Portfolio</a>
           <a href='/#contact'>Contact me</a>
           <a href='/blog'>Blog</a>
         </nav>
@@ -28,8 +28,8 @@ import { Icon } from 'astro-icon/components';
 </header>
 
 <style>
-  .upperHeader {
-    background-color: hsl(0, 0%, 10%);
+  .upper-header {
+    background-color: hsl(150, 20%, 25%);
     height: 40px;
     width: 100%;
     display: flex;
@@ -38,7 +38,6 @@ import { Icon } from 'astro-icon/components';
 
     .github {
       width: 1200px;
-      color: white;
       text-align: right;
       font-size: 0.9em;
 
@@ -46,13 +45,13 @@ import { Icon } from 'astro-icon/components';
       align-items: center;
       justify-content: flex-end;
 
-      .icon {
-        margin-right: 6px;
-        font-size: 1.2em;
+      svg {
+        margin-right: 4px;
+        font-size: 1.4em;
       }
 
       a {
-        color: white;
+        color: hsl(0, 0%, 100%);
         text-decoration: none;
       }
     }
@@ -69,14 +68,14 @@ import { Icon } from 'astro-icon/components';
     border-bottom: 1px solid hsla(0, 0%, 90%, 0.5);
     padding: 10px;
 
-    .navbarContainer {
+    .navbar-container {
       width: 1200px;
       height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
 
-      .navbarLeft {
+      .navbar-left {
         width: 50%;
 
         a {
@@ -89,7 +88,7 @@ import { Icon } from 'astro-icon/components';
           color: hsl(0, 0%, 0%);
         }
       }
-      .navbarRight {
+      .navbar-right {
         width: 50%;
 
         nav {

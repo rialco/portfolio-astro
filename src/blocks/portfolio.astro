@@ -3,50 +3,30 @@ import CardsContainer from '../components/CardsContainer.astro';
 
 const cards = [
   {
-    project: 'Li.Fi',
-    imagePath: '/images/lifi_jumper.jpg',
-    technologies: ['NodeJs', 'Typescript', 'MongoDB', 'Express', 'Fastify', 'Redis'],
-  },
-  {
-    project: 'Modo',
-    imagePath: '/images/modo.jpg',
-    technologies: ['NodeJS', 'NestJs', 'Express', 'DynamoDB', 'PostgreSQL', 'JWT', 'Docker', 'Kubernetes'],
-  },
-  {
-    project: 'Globant',
-    imagePath: '/images/globant.jpg',
-    technologies: [
-      'NodeJs',
-      'Javascript',
-      'Typescript',
-      'Express',
-      'Microsoft SQL Server',
-      'Jenkins',
-      'Docker',
-      'Kubernetes',
-    ],
-  },
-  {
     project: 'Blockchain RPC Aggregator',
     imagePath: '/images/rpc_aggregator.jpg',
     technologies: ['NodeJs', 'Javascript'],
+    keypoints: [],
   },
   {
     project: 'Blockchain events analytics',
     imagePath: '/images/blockchain_analytics.jpg',
     technologies: ['NodeJS', 'Grafana', 'Javascript'],
+    keypoints: [],
   },
   {
     project: 'ARI CANADA VISIONNEMENT INC.',
     imagePath: '/images/ari_canada.jpg',
     technologies: ['Wordpress', 'Woocommerce', 'Javascript', 'PHP'],
+    keypoints: [],
   },
 ];
 ---
 
 <div class='portfolio' id='portfolio'>
-  <div class='portfolioContainer'>
-    <h2>Portfolio</h2>
+  <div class='portfolio-container'>
+    <h2 class='component-heading'>&lt; Portfolio /&gt;</h2>
+    <h4>Projects</h4>
     <CardsContainer cards={cards} />
   </div>
 </div>
@@ -60,15 +40,31 @@ const cards = [
     align-items: flex-start;
     justify-content: center;
 
-    background-color: hsla(0, 0%, 0%, 0.05);
+    background-color: hsla(40, 15%, 92%);
 
-    .portfolioContainer {
+    .portfolio-container {
       width: 1200px;
+      padding: 20px;
 
       h2 {
-        text-align: center;
+        text-align: left;
         margin-top: 60px;
       }
+    }
+
+    .mongo {
+      color: #4db33d;
+    }
+    .postgres {
+      color: #0064a5;
+    }
+    .react {
+      color: #0064a5;
+    }
+    .express {
+    }
+    .node {
+      color: #68a063;
     }
   }
 </style>

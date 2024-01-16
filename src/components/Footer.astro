@@ -1,9 +1,5 @@
 ---
-interface Props {
-  currentYear: string;
-}
-
-const { currentYear } = Astro.props;
+const currentYear = new Date().getFullYear();
 ---
 
 <footer>
@@ -17,7 +13,7 @@ const { currentYear } = Astro.props;
 <style>
   footer {
     min-height: 10vh;
-    background-color: hsl(0, 0%, 10%);
+    background-color: hsl(150, 20%, 25%);
 
     .row {
       color: white;
@@ -26,7 +22,7 @@ const { currentYear } = Astro.props;
       h1 {
         font-size: 0.9em;
         margin-bottom: 10px;
-        color: hsl(0, 0%, 45%);
+        color: hsl(81, 20%, 80%);
       }
 
       h3 {

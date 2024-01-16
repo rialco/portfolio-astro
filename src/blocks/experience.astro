@@ -1,0 +1,86 @@
+---
+import CardsContainer from '../components/CardsContainer.astro';
+
+const cards = [
+  {
+    project: 'Li.Fi',
+    imagePath: '/images/lifi_jumper.jpg',
+    technologies: ['NodeJs', 'Typescript', 'MongoDB', 'Express', 'Fastify', 'Redis'],
+    keypoints: [
+      'Backend developer',
+      'Startup under the SCRUM methodology.',
+      'Implemented endpoint payload validation.',
+      'Experience implementing an on-chain gas estimation.',
+      'In charge of using jest to create tests suites and mocking network calls.',
+      'Migrated diverse Redis key-value to MongoDB collections',
+      'Refactor middleware authentication with Fastify',
+    ],
+  },
+  {
+    project: 'Modo',
+    imagePath: '/images/modo.jpg',
+    technologies: ['NodeJS', 'NestJs', 'Express', 'DynamoDB', 'PostgreSQL', 'JWT', 'Docker', 'Kubernetes'],
+    keypoints: [
+      'Backend developer',
+      'Fintech startup under the SCRUM methodology',
+      'In charge of developing new features, maintaining & updating different micro-services.',
+      'Helped in the transition from a monolith to a micro-service architecture.',
+      'Implemented authentication strategies with JWT.',
+      'Experience creating test suites with Jest.',
+      'Provided code reviews.',
+    ],
+  },
+  {
+    project: 'Globant',
+    imagePath: '/images/globant.jpg',
+    technologies: [
+      'NodeJs',
+      'Javascript',
+      'Typescript',
+      'Express',
+      'Microsoft SQL Server',
+      'Jenkins',
+      'Docker',
+      'Kubernetes',
+    ],
+    keypoints: [
+      'Fullstack developer',
+      'In charge of developing new features, maintaining & updating the LI.FI API.',
+      'Implemented endpoint payload validation.',
+      'Experience implementing an on-chain gas estimation.',
+      'Experience with jest to create tests suites mocking network calls.',
+      'Developed scripts for diverse tasks.',
+      'Provided code reviews.',
+    ],
+  },
+];
+---
+
+<div class='experience' id='experience'>
+  <div class='experience-container'>
+    <h2 class='component-heading'>&lt; Experience /&gt;</h2>
+    <h4>Latest jobs</h4>
+    <CardsContainer cards={cards} />
+  </div>
+</div>
+
+<style>
+  .experience {
+    background-color: hsl(81, 20%, 80%);
+    width: 100%;
+
+    min-height: calc(60vh - 110px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    .experience-container {
+      width: 1200px;
+      padding: 20px;
+      h2 {
+        text-align: left;
+        margin-top: 60px;
+      }
+    }
+  }
+</style>

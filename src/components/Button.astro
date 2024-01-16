@@ -4,11 +4,10 @@ interface Props {
   text: string;
   type?: 'submit' | 'button' | 'reset' | null;
   className?: string;
-  fn?: Function;
   icon?: string;
 }
 
-const { text, type, className, fn, icon } = Astro.props;
+const { text, type, className, icon } = Astro.props;
 ---
 
 <button type={type} class={'btn ' + className}>
