@@ -1,5 +1,4 @@
 import { Resend } from "resend";
-import validator from "validator";
 import { msToMinutes } from "./utils";
 
 const knownIps: { [key: string]: number } = {};
@@ -23,14 +22,6 @@ export const sendEmail = async (
 
   const PRIVATE_KEY = import.meta.env.RESEND_API_KEY;
   const resend = new Resend(PRIVATE_KEY);
-
-  if (!validator.isAlpha(name, "en-US", { ignore: "-" }))
-    throw new Error("Not a valid name");
-  if (!validator.isEmail(email)) throw new Error("Not a valid email");
-  if (!validator.isAlphanumeric(subject, "en-US", { ignore: "-" }))
-    throw new Error("Not a valid subject");
-  if (!validator.isAlphanumeric(message, "en-US", { ignore: "-" }))
-    throw new Error("Not a valid message");
 
   await resend.emails.send({
     from: "website@resend.dev",
