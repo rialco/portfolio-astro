@@ -32,9 +32,11 @@ import { Icon } from 'astro-icon/components';
     background-color: hsl(150, 20%, 25%);
     height: 40px;
     width: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px;
 
     .github {
       width: 1200px;
@@ -43,7 +45,7 @@ import { Icon } from 'astro-icon/components';
 
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: flex-start;
 
       svg {
         margin-right: 4px;
@@ -93,8 +95,8 @@ import { Icon } from 'astro-icon/components';
 
         nav {
           width: 100%;
-          display: flex;
-          justify-content: end;
+          display: none;
+
           a {
             font-family: 'Inconsolata', monospace;
             font-weight: 600;
@@ -106,10 +108,9 @@ import { Icon } from 'astro-icon/components';
           }
         }
 
-        @media (max-width: 720px) {
-          nav {
-            display: none;
-          }
+        @media (min-width: 768px) {
+          display: flex;
+          justify-content: end;
         }
       }
     }

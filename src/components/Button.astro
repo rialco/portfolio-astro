@@ -10,7 +10,7 @@ interface Props {
 const { text, type, className, icon } = Astro.props;
 ---
 
-<button type={type} class={'btn ' + className}>
+<button type={type} class={`btn ${className}`}>
   {icon ? <Icon name={icon} class='mr-10' /> : null}
   {text}
 </button>
@@ -18,10 +18,8 @@ const { text, type, className, icon } = Astro.props;
 <style>
   .btn {
     display: block;
-    width: 500px;
     height: 50px;
     border: none;
-    background-color: hsl(0, 0%, 0%);
     color: white;
 
     font-size: 1em;
