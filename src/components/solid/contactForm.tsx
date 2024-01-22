@@ -62,7 +62,6 @@ export function Form(props: { children: JSX.Element }) {
     <form onSubmit={submit}>
       <div class="form-alert-container">
         <Suspense>
-          {console.log(response())}
           {response() && (
             <div
               class={
