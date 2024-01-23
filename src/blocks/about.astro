@@ -72,13 +72,23 @@ import Link from '../components/Link.astro';
           </li>
         </ul>
 
-        <Link
-          text='Connect with me on LinkedIn'
-          className='linkedin-link'
-          icon='linkedin'
-          href='https://www.linkedin.com/in/ralvarezcorrea/'
-          target='_blank'
-        />
+        <div class='link-container'>
+          <Link
+            text='Connect with me'
+            className='about-link'
+            icon='linkedin'
+            href='https://www.linkedin.com/in/ralvarezcorrea/'
+            target='_blank'
+          />
+          <Link text='Github' className='about-link' icon='github' href='https://github.com/rialco' target='_blank' />
+          <Link
+            text='Twitch'
+            className='about-link'
+            icon='twitch'
+            href='https://www.twitch.tv/rialcom'
+            target='_blank'
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -120,8 +130,7 @@ import Link from '../components/Link.astro';
     height: 90vw;
     width: 90vw;
     border-radius: 100%;
-    border: 2px solid hsla(83, 20%, 76%);
-    box-shadow: 0px 6px 10px 4px hsla(0, 0%, 0%, 0.09);
+    box-shadow: 0px 6px 10px 4px hsla(210, 66%, 36%, 0.29);
     margin: auto;
     overflow: clip;
     transition: 0.5s ease-in-out;
@@ -177,6 +186,10 @@ import Link from '../components/Link.astro';
   .text-content > div > .tech-stack li > span {
     margin-left: 10px;
     font-size: 1rem;
+  }
+
+  .link-container {
+    display: flex;
   }
 
   @media (min-width: 768px) {
