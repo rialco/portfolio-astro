@@ -1,6 +1,10 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Link from '../components/Link.astro';
+
+Astro.response.headers.set('Cache-Control', 's-maxage=60, stale-while-revalidate');
+Astro.response.headers.set('Vercel-CDN-Cache-Control', 'max-age=60');
+Astro.response.headers.set('CDN-Cache-Control', 'max-age=60');
 ---
 
 <section class='about' id='about'>
