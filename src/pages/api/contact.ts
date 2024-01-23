@@ -1,6 +1,9 @@
 import type { APIRoute } from "astro";
-import { sendEmail } from "./helpers/email";
-import { checkFormParameters, sanitizeFormParameters } from "./helpers/utils";
+import { sendEmail } from "../../helpers/email";
+import {
+  checkFormParameters,
+  sanitizeFormParameters,
+} from "../../helpers/utils";
 
 export const POST: APIRoute = async ({ request, clientAddress }) => {
   try {

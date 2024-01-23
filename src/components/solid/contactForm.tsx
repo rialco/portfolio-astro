@@ -3,7 +3,7 @@ import { createSignal, createResource, Suspense } from "solid-js";
 import {
   checkFormParameters,
   sanitizeFormParameters,
-} from "../../pages/api/helpers/utils";
+} from "../../helpers/utils";
 
 async function postFormData(formData: FormData) {
   try {
