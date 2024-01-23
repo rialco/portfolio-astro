@@ -74,7 +74,7 @@ import Link from '../components/Link.astro';
 
         <Link
           text='Connect with me on LinkedIn'
-          className='linkedin-btn'
+          className='linkedin-link'
           icon='linkedin'
           href='https://www.linkedin.com/in/ralvarezcorrea/'
           target='_blank'
@@ -88,15 +88,13 @@ import Link from '../components/Link.astro';
   .about {
     position: relative;
     width: 100%;
+    height: 100%;
+    max-height: none;
 
     display: flex;
     align-items: center;
     justify-content: center;
     border-bottom: 1px solid hsla(0, 0%, 90%, 0.3);
-
-    padding-top: 20px;
-    height: 100%;
-    max-height: none;
   }
 
   .about-container {

@@ -19,27 +19,29 @@ const { text, type, className, icon } = Astro.props;
   .btn {
     display: block;
     height: 50px;
-    border: none;
-    color: white;
+    padding: 0px 20px;
+    border-radius: 4px;
 
+    text-decoration: none;
     font-size: 1em;
     font-weight: 600;
-    border-radius: 4px;
   }
 
   .mr-10 {
     margin-right: 10px;
   }
 
-  .linkedin-btn {
+  .form-button {
+    display: block;
+    width: 90%;
+    max-width: 500px;
+    height: 50px;
+    margin: auto;
+    border: none;
     background-color: hsl(131, 22%, 29%);
     color: white;
-    padding: 0px 20px;
 
-    display: flex;
-    align-items: center;
-    width: fit-content;
-
-    text-decoration: none;
+    font-size: 1em;
+    font-weight: 600;
   }
 </style>

@@ -1,6 +1,7 @@
 ---
 import Button from '../components/Button.astro';
 import { Form } from '../components/solid/contactForm';
+import '../components/solid/contactForm.module.css';
 ---
 
 <section class='contact' id='contact'>
@@ -8,7 +9,7 @@ import { Form } from '../components/solid/contactForm';
     <h2 class='component-heading'>&lt; Contact /&gt;</h2>
     <h4>Drop me a message!</h4>
     <Form client:only='solid'>
-      <Button text='Send message' type='submit' />
+      <Button text='Send message' type='submit' className='form-button' />
     </Form>
   </div>
 </section>
@@ -19,97 +20,18 @@ import { Form } from '../components/solid/contactForm';
     display: flex;
     align-items: flex-start;
     justify-content: center;
+  }
 
-    .contact-container {
-      width: 100%;
-      .text-input {
-        display: block;
-        width: 90%;
-        height: 50px;
-        margin: auto;
-        margin-bottom: 10px;
-        padding-left: 20px;
-        border-radius: 4px;
+  .contact-container {
+    width: 100%;
+  }
 
-        background-color: hsl(0, 0%, 95%);
-        border: none;
+  h2 {
+    text-align: center;
+    margin-top: 60px;
+  }
 
-        font-size: 0.95em;
-      }
-
-      .text-area {
-        display: block;
-        width: 90%;
-        height: 150px;
-        margin: auto;
-        margin-bottom: 10px;
-        padding-left: 20px;
-        padding-top: 10px;
-        border-radius: 4px;
-
-        background-color: hsl(0, 0%, 95%);
-        border: none;
-
-        font-size: 0.95em;
-      }
-      h2 {
-        text-align: center;
-        margin-top: 60px;
-      }
-
-      h4 {
-        text-align: center;
-      }
-
-      form {
-        position: relative;
-        width: 100%;
-        max-width: 500px;
-        display: block;
-        margin: auto;
-        margin-top: 40px;
-        margin-bottom: 100px;
-
-        .form-alert-container {
-          .alert {
-            padding: 20px;
-            border-radius: 6px;
-            margin-bottom: 20px;
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: center;
-            align-items: center;
-          }
-
-          .success {
-            background-color: hsl(81, 20%, 80%);
-          }
-
-          .error {
-            background-color: hsl(0, 73%, 56%);
-            color: white;
-          }
-
-          svg {
-            font-size: 1.8rem;
-            margin-right: 10px;
-          }
-        }
-
-        .btn {
-          display: block;
-          width: 90%;
-          max-width: 500px;
-          height: 50px;
-          margin: auto;
-          border: none;
-          background-color: hsl(131, 22%, 29%);
-          color: white;
-
-          font-size: 1em;
-          font-weight: 600;
-        }
-      }
-    }
+  h4 {
+    text-align: center;
   }
 </style>
