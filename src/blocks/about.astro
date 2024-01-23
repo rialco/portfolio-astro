@@ -128,7 +128,7 @@ import Link from '../components/Link.astro';
     transition: 0.5s ease-in-out;
   }
 
-  img {
+  .image-holder > img {
     position: absolute;
     top: 0;
     left: 0;
@@ -145,19 +145,19 @@ import Link from '../components/Link.astro';
     padding: 20px;
   }
 
-  h4 {
+  .text-content > div > h4 {
     margin-bottom: 20px;
   }
 
-  p {
+  .text-content > div > p {
     margin-bottom: 20px;
   }
 
-  .tech-stack-heading {
+  .text-content > div > .tech-stack-heading {
     margin-bottom: 10px;
   }
 
-  .tech-stack {
+  .text-content > div > .tech-stack {
     display: flex;
     flex-wrap: wrap;
     padding-right: 40px;
@@ -165,32 +165,19 @@ import Link from '../components/Link.astro';
     overflow: hidden;
   }
 
-  li {
-    display: inline-block;
+  .text-content > div > .tech-stack > li {
     display: flex;
     width: fit-content;
     justify-content: center;
     align-items: center;
     margin-right: 20px;
     margin-bottom: 14px;
-    font-size: 2em;
+    font-size: 1.8rem;
   }
 
-  span {
-    margin-left: 4px;
+  .text-content > div > .tech-stack li > span {
+    margin-left: 10px;
     font-size: 1rem;
-  }
-
-  .linkedin-btn {
-    background-color: hsl(131, 22%, 29%);
-    color: white;
-    padding: 0px 20px;
-
-    display: flex;
-    align-items: center;
-    width: fit-content;
-
-    text-decoration: none;
   }
 
   @media (min-width: 768px) {
@@ -204,7 +191,6 @@ import Link from '../components/Link.astro';
     .about-container {
       flex-direction: row;
     }
-
     .text-content {
       padding: 0px;
       width: 50%;
