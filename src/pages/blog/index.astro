@@ -1,7 +1,27 @@
 ---
 import Layout from '../../layouts/MainLayout.astro';
-import Cards from '../../../src/components/CardsContainer.astro';
-import ArticleLayout from '../../layouts/BlogPostLayout.astro';
+import BlogCard from '../../../src/components/BlogCard.astro';
 ---
 
-<Layout title='Blog' />
+<Layout title='Blog'>
+  <main>
+    <h1>Blog de tecnología</h1>
+    <div>
+      <BlogCard
+        title='test title'
+        description='test description'
+        imagePath='/images/modo.jpg'
+        technologies={[]}
+        link='test'
+      />
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px;
+  }
+</style>

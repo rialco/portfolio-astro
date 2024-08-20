@@ -3,43 +3,42 @@ import CardsContainer from '../components/CardsContainer.astro';
 
 const cards = [
   {
-    project: 'Programming teacher',
+    project: 'Profesor de programación',
     imagePath: '/images/fundacion.png',
     technologies: ['Html', 'Javascript', 'CSS'],
     keypoints: [
-      'I always wanted to share the knowledge I have gained throughout my career. That is why I currently volunteer at the foundation "Camino de Maria" to teach kids how to program websites and general tech topics.',
+      'Desde que tengo memoria he sido muy curioso con la tecnología, y siempre que puedo me gusta compartir mi conocimiento con los demas. Por esta razón, asisto a dar clases de pprogramación en la fundación camino de Maria a jovenes de bajos recursos. ',
     ],
   },
   {
-    project: 'Whatsapp AI Bot',
+    project: 'Bot de Whatsapp con IA',
     imagePath: '/images/whatsapp.png',
     technologies: ['Typescript', 'Queries', 'Webhooks'],
     keypoints: [
-      'Base project for aggregating RPC providers on the blockchain',
-      'Clean architecture principles',
-      'This repository contains the source code that provides the ability to make RPC calls and fallback to other RPC providers in case of failure',
+      'Principios de arquitectura limpia',
+      'Bot de whatsapp que atiende las conversaciones con ayuda de inteligencia artifical para brindarle al usuario una experiencia lo más cercana a una interacción humana posible.',
     ],
   },
 
   {
-    project: 'Blockchain RPC Aggregator',
+    project: 'Agregador de RPCs de Blockchain',
     imagePath: '/images/rpc_aggregator.jpg',
     technologies: ['NodeJs', 'Typescript', 'Ethersjs'],
     keypoints: [
-      'Base project for aggregating RPC providers on the blockchain',
-      'Clean architecture principles',
-      'This repository contains the source code that provides the ability to make RPC calls and fallback to other RPC providers in case of failure',
+      'Proyecto base para agregar RPCs de blockchain en una sola interfaz',
+      'Principios de arquitectura limpia',
+      'Este proyecto te permite hacer llamados a la blockchain a traves de una interfaz que agrega distintos RPCs, si una llamada falla tratara de utilizar el proximo proveedor de RPC y asi sucesivamente.',
     ],
   },
   {
-    project: 'Blockchain events analytics',
+    project: 'Analiticas de eventos en la Blockchain',
     imagePath: '/images/blockchain_analytics.jpg',
     technologies: ['NodeJS', 'Grafana', 'Typescript', 'Postgress'],
     keypoints: [
-      'Base project for querying blockchain events',
-      'Clean architecture principles',
-      'This repository contains the source code for querying blockchain events and later queue them in order to store them in a postgress database',
-      'This was used in conjunction with a docker network to connect to a grafana dashboard',
+      'Proyecto base para obtener los eventos que ocurren en la blockchain',
+      'Principios de arquitectura limpia',
+      'Este proyecto se utilizaba para escuchar todos los eventos emitidos en la blockchain y procedia a guardarlos en una base de datos PostgreSQL.',
+      'Se utilizaba en conjunto con un dashboard de Grafana para visualizar los datos en diversos graficos.',
     ],
   },
   {
@@ -47,10 +46,10 @@ const cards = [
     imagePath: '/images/ari_canada.jpg',
     technologies: ['Wordpress', 'Woocommerce', 'Javascript', 'PHP'],
     keypoints: [
-      'Wordpress site for ARI Canada Visionnement',
-      'Website to provide guidance and information on the migratory process to Canada',
-      'Included woocommerce to enable payments for previously mentioned service',
-      'Designed concept and develop custom user functionality',
+      'Sitio web en Wordpress y Woocommerce',
+      'Este sitio web fue un proyecto freelance para una empresa dedicada a servicios migratorios.',
+      'Se utilizo Woocommerce para procesar pagos de los servicios que ofrecia la empresa.',
+      'Creada desde cero. Desde los visuales ejecutivos hasta las funcionalidades personalizadas necesarias por el equipo.',
     ],
   },
 ];
@@ -58,8 +57,8 @@ const cards = [
 
 <section class='portfolio' id='portfolio'>
   <div class='portfolio-container'>
-    <h2 class='component-heading'>&lt; Portfolio /&gt;</h2>
-    <h4>Latest projects</h4>
+    <h2 class='component-heading'>&lt; Portafolio /&gt;</h2>
+    <h4>Ultimos proyectos</h4>
     <CardsContainer cards={cards} />
   </div>
 </section>
