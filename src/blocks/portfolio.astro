@@ -3,6 +3,25 @@ import CardsContainer from '../components/CardsContainer.astro';
 
 const cards = [
   {
+    project: 'Programming teacher',
+    imagePath: '/images/fundacion.png',
+    technologies: ['Html', 'Javascript', 'CSS'],
+    keypoints: [
+      'I always wanted to share the knowledge I have gained throughout my career. That is why I currently volunteer at the foundation "Camino de Maria" to teach kids how to program websites and general tech topics.',
+    ],
+  },
+  {
+    project: 'Whatsapp AI Bot',
+    imagePath: '/images/whatsapp.png',
+    technologies: ['Typescript', 'Queries', 'Webhooks'],
+    keypoints: [
+      'Base project for aggregating RPC providers on the blockchain',
+      'Clean architecture principles',
+      'This repository contains the source code that provides the ability to make RPC calls and fallback to other RPC providers in case of failure',
+    ],
+  },
+
+  {
     project: 'Blockchain RPC Aggregator',
     imagePath: '/images/rpc_aggregator.jpg',
     technologies: ['NodeJs', 'Typescript', 'Ethersjs'],
@@ -40,7 +59,7 @@ const cards = [
 <section class='portfolio' id='portfolio'>
   <div class='portfolio-container'>
     <h2 class='component-heading'>&lt; Portfolio /&gt;</h2>
-    <h4>Projects</h4>
+    <h4>Latest projects</h4>
     <CardsContainer cards={cards} />
   </div>
 </section>
