@@ -1,5 +1,5 @@
 ---
-import CardsContainer from '../components/CardsContainer.astro';
+import CardCarousel from '../components/CardCarousel.astro';
 
 const cards = [
   {
@@ -44,7 +44,7 @@ const cards = [
   {
     project: 'ARI CANADA VISIONNEMENT INC.',
     imagePath: '/images/ari_canada.jpg',
-    technologies: ['Wordpress', 'Woocommerce', 'Javascript', 'PHP'],
+    technologies: ['Woocommerce', 'Javascript', 'PHP'],
     keypoints: [
       'Sitio web en Wordpress y Woocommerce',
       'Este sitio web fue un proyecto freelance para una empresa dedicada a servicios migratorios.',
@@ -59,7 +59,7 @@ const cards = [
   <div class='portfolio-container'>
     <h2 class='component-heading'>&lt; Portafolio /&gt;</h2>
     <h4>Ultimos proyectos</h4>
-    <CardsContainer cards={cards} />
+    <CardCarousel cards={cards} />
   </div>
 </section>
 
@@ -72,11 +72,12 @@ const cards = [
     align-items: flex-start;
     justify-content: center;
 
-    background-color: hsla(40, 15%, 92%);
+    background-color: hsla(0, 0%, 95%);
   }
 
   .portfolio-container {
-    width: 1200px;
+    max-width: 1200px;
+    width: 100%;
     padding: 20px;
   }
 

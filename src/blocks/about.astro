@@ -20,7 +20,7 @@ import Link from '../components/Link.astro';
 
         <div class='code-snippet'>
           <div class='header'>
-            <h5>Tech stack</h5>
+            <h5>Stack de tecnología principal</h5>
             <Icon name='carbon:close-filled' />
           </div>
           <div class='content'>
@@ -38,12 +38,28 @@ import Link from '../components/Link.astro';
                 <span>PostgreSQL</span>
               </li>
               <li>
-                <Icon class='white-icon' name='devicon:nextjs' />
-                <span>NextJs</span>
+                <Icon name='devicon:react' />
+                <span>React</span>
               </li>
               <li>
-                <Icon class='white-icon' name='devicon:express' />
+                <Icon name='devicon:express' />
                 <span>Express</span>
+              </li>
+              <li>
+                <Icon name='devicon:solidjs' />
+                <span>SolidJs</span>
+              </li>
+              <li>
+                <Icon name='devicon:redis' />
+                <span>Redis</span>
+              </li>
+              <li>
+                <Icon name='devicon:astro' />
+                <span>Astro</span>
+              </li>
+              <li>
+                <Icon name='devicon:wordpress' />
+                <span>Wordpress</span>
               </li>
             </ul>
           </div>
@@ -60,14 +76,7 @@ import Link from '../components/Link.astro';
                 <Icon name='devicon:rust' />
                 <span>Rust</span>
               </li>
-              <li>
-                <Icon name='devicon:redis' />
-                <span>Redis</span>
-              </li>
-              <li>
-                <Icon name='devicon:astro' />
-                <span>Astro</span>
-              </li>
+
               <li>
                 <Icon name='devicon:nestjs' />
                 <span>NestJs</span>
@@ -98,6 +107,13 @@ import Link from '../components/Link.astro';
             className='about-link'
             icon='twitch'
             href='https://www.twitch.tv/rialcom'
+            target='_blank'
+          />
+          <Link
+            text='Youtube'
+            className='about-link'
+            icon='youtube'
+            href='https://www.youtube.com/@rialdev'
             target='_blank'
           />
         </div>
@@ -182,15 +198,14 @@ import Link from '../components/Link.astro';
     border-radius: 10px;
     margin: 20px 0px;
     overflow: hidden;
-    background-color: hsl(211, 34%, 23%, 0.95);
-    box-shadow: 0 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: hsl(0, 0%, 95%, 1);
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.05);
   }
 
   .code-snippet .content {
     position: relative;
     padding: 20px;
-
-    color: hsl(0, 0%, 85%);
+    color: hsl(0, 0%, 35%);
   }
 
   .code-snippet .header {
@@ -199,12 +214,12 @@ import Link from '../components/Link.astro';
     align-items: center;
     justify-content: flex-start;
     padding: 6px 20px;
-    background-color: hsl(211, 34%, 14%);
+    background-color: hsl(211, 34%, 23%);
   }
 
   .code-snippet .header h5 {
     font-size: 1em;
-    color: hsl(0, 0%, 80%);
+    color: white;
   }
 
   .code-snippet .header svg {
@@ -219,21 +234,24 @@ import Link from '../components/Link.astro';
   }
 
   .tech-stack {
+    margin: auto;
+    max-width: 360px;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
   }
 
   .tech-stack > li {
+    width: 110px;
     display: flex;
-    width: fit-content;
-    justify-content: center;
     align-items: center;
     font-size: 1.4rem;
   }
 
   .tech-stack li > span {
-    margin-left: 4px;
+    margin-left: 8px;
     font-size: 1rem;
   }
 
@@ -249,7 +267,7 @@ import Link from '../components/Link.astro';
   @media (min-width: 768px) {
     .about {
       height: 100vh;
-      max-height: 600px;
+      max-height: 700px;
     }
     .image-container {
       width: 50%;

@@ -1,0 +1,107 @@
+---
+import Card from './Card.astro';
+import { type Card as CardType } from './types/card';
+
+interface Props {
+  cards: CardType[];
+}
+
+function generateRandomId() {
+  return `id-${Math.random().toString(36).substr(2, 9)}`;
+}
+
+const randomCarouselId = 'carousel' + generateRandomId();
+const randomNextId = 'next' + generateRandomId();
+const randomBackId = 'back' + generateRandomId();
+
+const { cards } = Astro.props;
+---
+
+<div class='wrapper'>
+  <div class='carousel' id={randomCarouselId}>
+    <div class='content'>
+      {
+        cards.map((card) => (
+          <div class='item'>
+            <Card
+              project={card.project}
+              imagePath={card.imagePath}
+              technologies={card.technologies}
+              keypoints={card.keypoints}
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  <div class='carousel-btns'>
+    <button class='back' id={randomBackId} disabled>&#8249;</button>
+    <button class='next' id={randomNextId}>&#8250;</button>
+  </div>
+</div>
+
+<script type='module' define:vars={{ randomCarouselId, randomNextId, randomBackId }}>
+  import { Carousel } from './scripts/carousel.js';
+  const carouselId = randomCarouselId;
+  const nextId = randomNextId;
+  const backId = randomBackId;
+
+  const carousel = document.querySelector('#' + carouselId);
+  const items = document.querySelectorAll('#' + carouselId + ' .item');
+  const next = document.querySelector('#' + nextId);
+  const back = document.querySelector('#' + backId);
+
+  const csl = new Carousel(carousel, items, next, back);
+  csl.setItemSize();
+</script>
+
+<style>
+  .wrapper {
+    width: 100%;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .carousel {
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+
+  .content {
+    width: 1000%;
+    display: flex;
+  }
+
+  .carousel-btns {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .carousel-btns button {
+    padding: 20px 20px;
+    margin-left: 10px;
+    border: 1px solid hsl(0, 0%, 90%);
+    border-radius: 4px;
+
+    background-color: white;
+    box-shadow: 0px 2px 4px 0px hsla(0, 0%, 0%, 0.1);
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 0;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .carousel-btns button:disabled {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.1);
+  }
+
+  .item {
+    position: relative;
+    padding: 10px;
+  }
+</style>

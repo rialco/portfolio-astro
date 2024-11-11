@@ -1,0 +1,35 @@
+---
+interface Props {
+  videoId: string;
+  videoDescription: string;
+}
+
+const { videoId, videoDescription } = Astro.props;
+---
+
+<div>
+  <div>
+    <h2>Video tutorial</h2>
+    <p>{videoDescription}</p>
+
+    <iframe
+      class='video-iframe'
+      src=`https://www.youtube.com/embed/${videoId}`
+      allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'></iframe>
+  </div>
+</div>
+
+<style>
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 40px;
+  }
+
+  .video-iframe {
+    width: 100%;
+    height: 500px;
+  }
+</style>

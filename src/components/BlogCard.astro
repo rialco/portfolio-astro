@@ -6,20 +6,26 @@ interface Props extends Card {}
 const { title, description, imagePath, technologies, link } = Astro.props;
 ---
 
-<div class='card'>
-  <img src={imagePath} alt='Temporary' />
-  <div class='project-info'>
-    <h2>{title}</h2>
-    <p>{description}</p>
-    <div class='pills-container'>
-      {technologies.map((tech, idx) => (idx < 4 ? <span class='pill'>{tech}</span> : null))}
-      {technologies.length > 4 ? <span class='pill'> + others </span> : null}
+<div class='wrapper'>
+  <div class='card'>
+    <img src={imagePath} alt='Temporary' />
+    <div class='project-info'>
+      <h2>{title}</h2>
+      <p>{description}</p>
+      <div class='pills-container'>
+        {technologies.map((tech, idx) => (idx < 4 ? <span class='pill'>{tech}</span> : null))}
+        {technologies.length > 4 ? <span class='pill'> + others </span> : null}
+      </div>
+      <a href={link}>Leer mas</a>
     </div>
-    <a href={link}>Leer mas</a>
   </div>
+  <div class='separator'></div>
 </div>
 
 <style>
+  .wrapper {
+  }
+
   .card {
     position: relative;
     max-width: 1200px;
@@ -29,10 +35,7 @@ const { title, description, imagePath, technologies, link } = Astro.props;
 
     margin: auto;
     overflow: hidden;
-    background-color: hsl(40, 14%, 96%);
-    box-shadow: 0px 4px 8px 0px hsla(150, 20%, 25%, 0.2);
     transition: ease-in-out 0.5s;
-    border-radius: 10px;
     cursor: pointer;
   }
 
@@ -44,6 +47,7 @@ const { title, description, imagePath, technologies, link } = Astro.props;
     font-weight: 600;
     font-size: 1.6em;
     margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   .project-info {
@@ -71,5 +75,12 @@ const { title, description, imagePath, technologies, link } = Astro.props;
   }
 
   .card:hover {
+  }
+
+  .wrapper .separator {
+    margin-top: 20px;
+    width: 100%;
+    height: 1px;
+    background-color: hsl(0, 0%, 90%);
   }
 </style>

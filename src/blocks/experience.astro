@@ -1,7 +1,19 @@
 ---
-import CardsContainer from '../components/CardsContainer.astro';
+import CardCarousel from '../components/CardCarousel.astro';
 
 const cards = [
+  {
+    project: 'Crescent Garden',
+    imagePath: '/images/crescent.jpg',
+    technologies: ['Javascript', 'PHP', 'Woocommerce', 'SAP B1', 'MySQL'],
+    keypoints: [
+      'Desarrollador fullstack',
+      'Experiencia manejando un ecommerce con miles de visitantes diarios.',
+      'Refactorización de funcionalidades personalizadas.',
+      'Encargado del desarrollo y manejo de nuevos proyectos web.',
+      'Encargado de mantener y optimizar la integración con SAP mediante el Service Layer API.',
+    ],
+  },
   {
     project: 'Li.Fi',
     imagePath: '/images/lifi_jumper.jpg',
@@ -57,7 +69,7 @@ const cards = [
   <div class='experience-container'>
     <h2 class='component-heading'>&lt; Experiencia &gt;</h2>
     <h4>Ultimos trabajos</h4>
-    <CardsContainer cards={cards} />
+    <CardCarousel cards={cards} />
   </div>
 </section>
 
@@ -73,7 +85,8 @@ const cards = [
   }
 
   .experience-container {
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
     padding: 20px;
   }
 

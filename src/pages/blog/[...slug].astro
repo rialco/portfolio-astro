@@ -1,0 +1,120 @@
+---
+import Layout from '../../layouts/MainLayout.astro';
+import VideoTutorial from '../../components/VideoTutorial.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { videoId, videoDescription } = entry.data;
+const { Content } = await entry.render();
+
+const formattedDate = new Intl.DateTimeFormat('es-CO', {
+  timeZone: 'America/Bogota',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}).format(entry.data.pubDate);
+---
+
+<Layout title={entry.data.title}>
+  <main>
+    <article>
+      <header>
+        <p class='date'>{formattedDate}</p>
+        <h1>{entry.data.title}</h1>
+        <div class='tags-container'>
+          {entry.data.tags.map((tag) => <span>{tag}</span>)}
+        </div>
+        <p>{entry.data.description}</p>
+      </header>
+      <div class='separator'></div>
+      <div>
+        <VideoTutorial videoId={videoId} videoDescription={videoDescription} />
+        <div class='separator'></div>
+        <div class='content'>
+          <Content />
+        </div>
+      </div>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  main {
+    width: 100%;
+  }
+
+  article {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 10px;
+  }
+
+  article header .date {
+    margin-bottom: 4px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  article .tags-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin: 14px 0;
+  }
+
+  article .tags-container span {
+    display: block;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 2px 20px;
+    border-radius: 20px;
+    text-transform: capitalize;
+    font-size: 0.9em;
+  }
+
+  article header p {
+    margin-bottom: 40px;
+  }
+
+  .separator {
+    height: 2px;
+    background-color: hsl(0, 0%, 90%);
+    margin: 20px 0;
+  }
+
+  :global(.content h2) {
+    margin-bottom: 20px !important;
+  }
+
+  :global(.content p) {
+    margin-bottom: 20px;
+  }
+
+  :global(.content ol) {
+    padding-left: 60px;
+    margin-bottom: 20px;
+  }
+
+  :global(.content ol li) {
+    margin-bottom: 10px;
+    padding-left: 10px;
+  }
+
+  :global(.content ol li ul, ol) {
+    margin-top: 10px;
+    padding-left: 10px;
+  }
+
+  :global(.content code) {
+    background-color: hsla(211, 34%, 23%, 0.7);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+</style>

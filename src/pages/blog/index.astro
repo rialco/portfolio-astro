@@ -1,19 +1,26 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../../layouts/MainLayout.astro';
 import BlogCard from '../../../src/components/BlogCard.astro';
+
+const posts = await getCollection('blog');
 ---
 
 <Layout title='Blog'>
   <main>
     <h1>Blog de tecnología</h1>
     <div>
-      <BlogCard
-        title='test title'
-        description='test description'
-        imagePath='/images/modo.jpg'
-        technologies={[]}
-        link='test'
-      />
+      {
+        posts.map((post) => (
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            imagePath={post.data.thumbnail}
+            technologies={[]}
+            link={`/blog/${post.slug}/`}
+          />
+        ))
+      }
     </div>
   </main>
 </Layout>
@@ -21,7 +28,13 @@ import BlogCard from '../../../src/components/BlogCard.astro';
 <style>
   main {
     max-width: 1200px;
+    min-height: 100vh;
     margin: auto;
-    padding: 100px;
+    padding: 0px 20px;
+    padding-top: 100px;
+  }
+
+  h1 {
+    margin-bottom: 20px;
   }
 </style>
