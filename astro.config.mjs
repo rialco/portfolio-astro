@@ -7,5 +7,7 @@ import solid from "@astrojs/solid-js";
 export default defineConfig({
   integrations: [icon(), solid()],
   output: "hybrid",
-  adapter: vercel(),
+  adapter: vercel({
+    imageService: true
+  }),
 });
