@@ -1,13 +1,16 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+
 import Link from '../components/Link.astro';
+import profileImg from '../images/profile.jpeg';
 ---
 
 <section class='about' id='about'>
   <div class='about-container'>
     <div class='image-container'>
       <div class='image-holder'>
-        <img src='/images/profile.jpeg' alt='Profile image' />
+        <Image src={profileImg} alt='Profile image' />
       </div>
     </div>
     <div class='text-content'>
