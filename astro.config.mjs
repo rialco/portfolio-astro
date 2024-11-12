@@ -1,11 +1,10 @@
 import { defineConfig } from "astro/config";
 import icon from "astro-icon";
 import vercel from "@astrojs/vercel/serverless";
-import solid from "@astrojs/solid-js";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [icon(), solid()],
+  integrations: [icon()],
   output: "hybrid",
   adapter: vercel({
     imageService: true
